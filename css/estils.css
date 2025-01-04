@@ -1,0 +1,1314 @@
+/*=======
+Font: La família de font per a tot el lloc web serà la Alegreya Sans
+=========*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*===========================================================
+  VARIABLES
+  Descripció: Definició de les variables de colors, tipografies i mides
+  de font que s'utilitzaran a tot el lloc web per facilitar la personalització.
+===========================================================*/
+
+:root {
+    --main-font: "Alegreya Sans", serif;
+
+    --color-negre: rgb(0, 0, 0);
+    --color-blanc: rgb(255, 255, 255);
+    --color-verd: rgb(64, 195, 130);
+    --color-beix: rgb(242, 242, 230);
+    --color-beix-modificat: rgba(242, 242, 230, 0.7);
+
+    --font-size-xnano: 0.45em;
+    --font-size-nano: 0.55em;
+    --font-size-micro: 0.625em;
+    --font-size-xsmall: 0.75em;
+    --font-size-small: 0.875em;
+    --font-size-base: 1.1em;
+    --font-size-large: 1.125em;
+    --font-size-h3: 1.75em;
+    --font-size-xlarge: 1.5em;
+    --font-size-h2: 2.25em;
+    --font-size-xxlarge: 2em;
+    --font-size-h2-plus: 3em;
+    --font-size-h1: 4.1em;
+
+
+    --padding-right: 14vw;
+}
+
+/*===========================================================
+  VARIABLES
+  Format recomanat per l'exercici.
+  Modificar el mínim possible
+  En aquest css usarem l'estil de caixa alternatiu amb box-sizing: border-box
+===========================================================*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*===========================================================
+  ELEMENTS COMÚNS
+===========================================================*/
+html,
+body {
+    width: 100%;
+    /*Recomanat*/
+    height: 100%;
+    /*Recomanat*/
+    font-family: var(--main-font);
+    background-color: var(--color-beix);
+}
+
+footer {
+    background-color: var(--color-negre);
+    color: var(--color-blanc);
+    display: flex;
+}
+
+footer .instagram-container {
+    content: url("../img/instagram.svg");
+    display: inline-block;
+}
+
+footer .youtube-container {
+    content: url("../img/youtube.svg");
+    display: inline-block;
+}
+
+footer .legal-links a {
+    text-decoration: none;
+    color: var(--color-blanc);
+}
+
+footer .footer-social {
+    display: flex;
+}
+
+footer .footer-logo {
+    display: flex;
+}
+
+footer li a:hover {
+    color: var(--color-verd);
+}
+
+footer .social-links a:hover {
+    opacity: 0.7;
+}
+
+header {
+    display: flex;
+    color: var(--color-negre);
+    background-color: var(--color-blanc);
+}
+
+header .logo-container {
+    content: url("../img/logotip.svg");
+    display: inline-block;
+}
+
+footer .logo-container-footer {
+    content: url("../img/logotip-n.svg");
+    display: inline-block;
+}
+
+article {
+    margin-left: auto;
+    /*Recomanat*/
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-negre);
+    font-weight: 700;
+}
+
+.breadcrumb a:hover,
+nav a:hover {
+    color: var(--color-verd);
+}
+abbr {
+    
+    cursor: help; 
+    
+  }
+
+/**/
+/* Contenidor principal adaptable */
+.container {
+    padding: 20px;
+}
+
+.container-max {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.container-max-2 {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/*===========================================================
+  SELECTORS PER INDEX.HTML
+===========================================================*/
+.index_content {
+    flex-grow: 1;
+    /*Amb l'estructura de l'html podem mantenir el footer abaix així*/
+}
+
+/*HERO IMAGE de index:*/
+.hero {
+    position: static;
+    width: 100%;
+    height: auto;
+    background-image: url(../img/hero-image-home.jpg);
+    background-position: center 50%;
+    padding-top: 45vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+
+.hero-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+    color: var(--color-blanc);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-blanc);
+}
+
+.hero-credits {
+    font-size: var(--font-size-xsmall);
+    padding: 7px 11px 11px 6px;
+    margin: 10px;
+    background-color: var(--color-beix-modificat);
+}
+
+.post_content section a,
+.post_content .hero a,
+.watermark a,
+.animal a,
+.index_content a {
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-negre);
+    color: var(--color-negre);
+}
+
+.post_content section a:hover,
+.post_content .hero a:hover,
+.watermark a:hover,
+.animal a:hover,
+.index_content a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-negre);
+    color: var(--color-negre);
+}
+
+/*--------------------*/
+/*Contingut del contenidor per sota de la imatge*/
+.index_content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.index_content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-beix);
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: var(--color-blanc);
+    row-gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.tarjeta h3 {
+    font-weight: 700;
+    font-size: var(--font-size-xlarge);
+}
+.tarjeta a:first-of-type:hover,
+.tarjeta a:first-of-type{
+    all: unset; 
+    cursor: pointer;
+}
+
+.card-content .button,
+.formulario-newsletter button[type="submit"],
+.tarjeta a {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--color-negre);
+    padding: 8px 0px;
+    margin: 45px 30px 0 0;
+    border: 1px solid var(--color-negre);
+    background-color: transparent;
+    cursor: pointer;
+    width: fit-content;
+    min-width: 30%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card-content .button {
+    width: fit-content;
+    min-width: 25%;
+    font-size: var(--font-size-small);
+}
+
+.card-content .button:hover,
+.formulario-newsletter button[type="submit"]:hover,
+.tarjeta a:hover {
+    border: 1px solid var(--color-verd);
+}
+
+/*===========================================================
+  SELECTORS PER tema-del-mes.HTML
+===========================================================*/
+.tema_del_mes_content {
+    flex-grow: 1;
+    /*Amb l'estructura de l'html podem mantenir el footer abaix així*/
+}
+
+.contenidor-titol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenidor-tema-mes {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.tema {
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.mes-any {
+    background-color: var(--color-verd);
+    color: var(--color-blanc);
+    padding: 5px 15px 0px 15px;
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+}
+
+.subtitol {
+    margin-top: 40px;
+    font-size: var(--font-size-h2);
+}
+
+/*Barra de navegació + llista d'animals*/
+/*Barra de navegació d'animals*/
+
+.tema_del_mes_content nav {
+    justify-content: space-evenly;
+}
+
+.tema_del_mes_content .navegacio ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+
+
+/*Estil per al bloc d'animal: Nom, foto, descripció...*/
+.animal {
+    box-sizing: border-box;
+    text-align: justify;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.animal h1 {
+    font-size: var(--font-size-h1);
+}
+
+.animal h2 {
+    font-size: var(--font-size-h2);
+}
+
+.nom_estat_animal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.descripcio_animal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.animal img {
+    border: 15px solid var(--color-blanc);
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.mes-info {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.animal figcaption {
+    margin-top: 10px;
+    font-size: var(--font-size-small);
+}
+
+.nom_estat_animal p {
+    font-size: var(--font-size-large);
+    font-weight: 400;
+}
+
+
+/*===========================================================
+  SELECTORS PER blog.HTML
+===========================================================*/
+
+.blog_content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Amb l'estructura de l'html podem mantenir el footer abaix així*/
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+.card {
+    background-color: var(--color-blanc);
+    overflow: hidden;
+    margin: 30px 30px 0 30px;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-content h2 {
+    font-size: var(--font-size-h3);
+    color: var(--color-negre);
+    margin: 10px 0;
+}
+
+.card-content a {
+    text-decoration: none;
+}
+
+.card-content p {
+    font-size: var(--font-size-base);
+    color: var(--color-negre);
+}
+
+.card .card-content>p:nth-of-type(2) {
+    font-size: var(--font-size-small);
+    margin: 15px 0 0 0;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.watermark {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--color-beix-modificat);
+    color: var(--color-negre);
+    padding: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+/*--------PAGINACIÓ GENERAL-------------*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 60px 0 70px;
+}
+
+.pagination li {
+    margin: 0 6px;
+}
+
+.pagination a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    width: fit-content;
+    min-width: 25px;
+    border: 1px solid var(--color-negre);
+    text-decoration: none;
+    color: var(--color-negre);
+    cursor: pointer;
+    font-size: var(--font-size-small);
+    padding: 2px;
+    font-weight: 700;
+    background-color: var(--color-blanc);
+}
+
+.pagination a:hover {
+    background-color: var(--color-verd);
+    color: var(--color-blanc);
+    border: 0;
+}
+
+.pagination .active {
+    background-color: var(--color-verd);
+    color: var(--color-blanc);
+    border-color: var(--color-verd);
+    cursor: default;
+}
+
+/*===========================================================
+  SELECTORS PER post.html
+===========================================================*/
+.post_content {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+/*Cas especial per a poder fer el contingut de text més estret*/
+.post_content .container {
+    max-width: 62%;
+}
+
+.post_content .title {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.post_content .subtitol {
+    margin: 0;
+}
+
+.post_content .hero {
+    position: static;
+    width: 100%;
+    height: auto;
+    background-image: url(../img/post-fast-fashion.jpg);
+    background-position: center;
+    background-size: cover;
+    /* Hace que la imagen se adapte al ancho */
+    padding-top: 45vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background-repeat: no-repeat;
+}
+
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb li {
+    margin-right: 5px;
+}
+
+.breadcrumb li a {
+    font-weight: 400;
+}
+
+.breadcrumb li::after {
+    content: ">";
+    margin-left: 5px;
+    color: var(--color-negre);
+}
+
+.breadcrumb li:last-child::after {
+    content: "";
+}
+
+.post_content .container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+}
+
+.post_content section h2 {
+    font-size: var(--font-size-h2);
+    align-self: start;
+}
+
+.post_content section:first-of-type p {
+    font-size: var(--font-size-h3);
+    margin-top: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.post_content section p {
+    font-size: var(--font-size-large);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+    align-self: start;
+}
+
+.post_content section:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post_content figure {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+}
+
+.post_content figure iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+.post_content ol {
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+}
+
+.post_content section ol {
+    padding-left: 2.5rem;
+    line-height: 2.5;
+    font-size: var(--font-size-base);
+}
+
+.post_content figcaption {
+    font-size: var(--font-size-xsmall);
+    color: var(--color-negre);
+    margin-top: 0.5rem;
+}
+
+.border-negre {
+    width: 100vw;
+    height: 1px;
+    background-color: var(--color-negre);
+    border: none;
+    position: relative;
+}
+
+.mes_articles {
+    border-top: 1px;
+    flex-direction: column;
+    padding: 30px 50px 50px 50px;
+}
+
+/*==================== Media Queries per ser responsive ===============*/
+/* Mobils (fins a 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: larger;
+    }
+
+    nav a {
+        padding: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 30px 50px 50px 50px;
+    }
+
+    footer .footer-social {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer .footer-logo {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .legal-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+/*===========================================================
+  SELECTORS PER index.HTML
+===========================================================*/
+    /*Contingut del contenidor per sota de la imatge*/
+
+    .index_content h2 {
+        font-size: 2rem;
+        margin: 40px 0 40px 0;
+    }
+
+    .contenido-naturae-hub {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .texto-naturae-hub {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .formulario-newsletter {
+        flex: 1 1 30%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario-newsletter form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+    }
+
+    .formulario-newsletter input[type="text"],
+    .formulario-newsletter input[type="email"] {
+        width: 65%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid var(--color-beix);
+        box-sizing: border-box;
+    }
+
+    .index_content.formulario-newsletter label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .formulario-newsletter input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    .formulario-newsletter button[type="submit"] {
+        color: var(--color-negre);
+        padding: 8px 0px;
+        border: 1px solid var(--color-negre);
+        background-color: transparent;
+        cursor: pointer;
+        width: 31%;
+    }
+
+/*===========================================================
+  SELECTORS PER tema-del-mes.HTML
+===========================================================*/
+    .tema_del_mes_content nav {
+        justify-content: space-evenly;
+        font-size: var(--font-size-small);
+    }
+
+    .subtitol {
+        font-size: var(--font-size-h2-plus);
+    }
+    .tema_del_mes_content .navegacio ul li:not(:last-child)::after {
+        content: "\00B7";
+        font-size: 1.5em;
+        color: var(--color-verd);
+        vertical-align: inherit;
+    }
+/*===========================================================
+  SELECTORS PER blog.HTML Tablets
+===========================================================*/
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+/*===========================================================
+  SELECTORS PER post.html mobils
+===========================================================*/
+
+    .post_content .container {
+        max-width: 100%;
+    }
+
+    .post_content section:nth-of-type(3) {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .post_content .title p {
+        font-size: var(--font-size-h3);
+    }
+
+    .post_content ol {
+        font-size: var(--font-size-base);
+    }
+
+    .post_content .subtitol {
+        margin-top: 0px;
+        font-size: var(--font-size-h3);
+    }
+
+    .post_content figure {
+        max-width: 100%;
+    }
+    .post_content .grid .card-content a:first-of-type  {
+        text-decoration: none;
+        border-bottom: 0px ;
+    }
+    .post_content .grid .card-content h2{
+        font-size: var(--font-size-base);
+    }
+
+}
+
+/* Tablets (entre 768px i 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    nav {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: larger;
+    }
+
+    nav a {
+        padding: 5px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 30px 50px 50px 50px;
+    }
+
+    footer .footer-social {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer .footer-logo {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .legal-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+/*===========================================================
+  SELECTORS PER index.HTML Tablets
+===========================================================*/
+    /*Contingut del contenidor per sota de la imatge*/
+    .index_content h2 {
+        font-size: 2rem;
+        margin: 40px 0 40px 0;
+    }
+
+    .contenido-naturae-hub {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .texto-naturae-hub {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .formulario-newsletter {
+        flex: 1 1 30%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario-newsletter form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .formulario-newsletter input[type="text"],
+    .formulario-newsletter input[type="email"] {
+        width: 65%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid var(--color-beix);
+        box-sizing: border-box;
+    }
+
+    .index_content.formulario-newsletter label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .formulario-newsletter input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    .formulario-newsletter button[type="submit"] {
+        color: var(--color-negre);
+        padding: 8px 0px;
+        border: 1px solid var(--color-negre);
+        background-color: transparent;
+        cursor: pointer;
+        width: 31%;
+    }
+
+    .histories-canvi {
+        padding: 40px 0;
+    }
+
+    .tarjetas-histories {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        column-gap: 40px;
+    }
+
+    /*===========================================================
+  SELECTORS PER tema-del-mes.html Tablets
+===========================================================*/
+    .contenidor-tema-mes {
+        flex-direction: row;
+    }
+    .tema_del_mes_content .navegacio ul li:not(:last-child)::after {
+        content: "\00B7";
+        font-size: 1.5em;
+        color: var(--color-verd);
+        vertical-align: inherit;
+    }
+    /*===========================================================
+  SELECTORS PER blog.html Tablets
+===========================================================*/
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnes */
+    }
+
+
+    /*===========================================================
+  SELECTORS PER post.html Tablets
+===========================================================*/
+
+    .post_content .container {
+        max-width: 100%;
+    }
+
+    .post_content section:nth-of-type(3) {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .post_content .title p {
+        font-size: var(--font-size-large);
+    }
+
+    .post_content .subtitol {
+        margin-top: 0px;
+        font-size: var(--font-size-h3);
+    }
+
+    .post_content figure {
+        max-width: 100%;
+    }
+    .post_content .grid .card-content a:first-of-type  {
+        text-decoration: none;
+        border-bottom: 0px ;
+    }
+    .post_content .grid .card-content h2{
+        font-size: var(--font-size-base);
+    }
+
+}
+
+/* Escriptori (a partir de 992px) */
+@media (min-width: 992px) {
+
+    /*Estil comú a totes les pagines*/
+    .container {
+        padding: 20px;
+    }
+
+    header {
+        padding: 30px 50px 30px 50px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer {
+        width: 100vw;
+        min-width: 100vw;
+        padding: 30px 50px 50px 50px;
+        justify-content: space-between;
+        font-size: var(--font-size-small);
+
+        flex-shrink: 0; /* No permet que es redueixi dins de contenidors flex */
+        white-space: nowrap; /* Evita salts de línia */
+        overflow: hidden; /* Gestiona contingut desbordant */
+
+    }
+
+    footer .footer-social {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+
+    footer .footer-logo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    header nav a,
+    footer nav a {
+        padding: 10px;
+    }
+
+    header nav a:nth-child(1)::after,
+    footer nav a:nth-child(1)::after {
+        content: "\007C";
+        /* Barra vertical | (codi Unicode) */
+        margin-left: 20px;
+        color: var(--color-negre);
+    }
+
+    .legal-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .legal-links li {
+        display: inline;
+    }
+
+    .legal-links li:not(:last-child)::after {
+        content: "\007C";
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        color: var(--color-blanc);
+    }
+
+    /*===========================================================
+  SELECTORS PER index.HTML Desktop
+===========================================================*/
+    /*Contingut del contenidor per sota de la imatge*/
+    .contenido-naturae-hub {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .texto-naturae-hub {
+        flex: 1 1 50%;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .formulario-newsletter {
+        flex: 1 1 20%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario-newsletter form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .formulario-newsletter input[type="text"],
+    .formulario-newsletter input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid var(--color-beix);
+        box-sizing: border-box;
+    }
+
+    .index_content.formulario-newsletter label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .formulario-newsletter input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+
+    .histories-canvi {
+        padding: 40px 0;
+    }
+
+    .tarjetas-histories {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        column-gap: 40px;
+    }
+
+    /*===========================================================
+  SELECTORS PER tema-del-mes.HTML Desktop
+===========================================================*/
+    .contenidor-tema-mes {
+        flex-direction: row;
+    }
+
+    .animals {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        column-gap: 135px;
+    }
+
+    .animals>ul li {
+        margin-bottom: 50px;
+    }
+
+    .tema_del_mes_content .navegacio ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: baseline;
+        flex-direction: column;
+    }
+
+    .tema_del_mes_content .navegacio li {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .tema_del_mes_content ul li:not(:last-child)::after {
+        content: "";
+    }
+
+    .animal {
+        box-sizing: border-box;
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+    }
+
+    .animal h1 {
+        font-size: var(--font-size-h2);
+    }
+
+    .animal h2 {
+        font-size: var(--font-size-xlarge);
+    }
+
+    .nom_estat_animal p {
+        font-size: var(--font-size-small);
+        font-weight: 400;
+    }
+
+    .nom_estat_animal {
+        flex: 1 1 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .animal figure {
+        flex-wrap: wrap;
+        align-content: space-between;
+        flex: 1 1 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+    }
+
+    .descripcio_animal {
+        flex: 1 1 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: var(--font-size-xlarge);
+    }
+
+    .animal img {
+        border: 15px solid var(--color-blanc);
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .animal figcaption {
+        margin-top: 5px;
+        text-align: left;
+        font-size: var(--font-size-micro);
+    }
+
+    .mes-info {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+    /*===========================================================
+  SELECTORS PER blog.HTML Desktop
+===========================================================*/
+
+.grid {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+.post_content .grid {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    text-decoration: none;
+    border-bottom: 0px ;
+    color: var(--color-negre);
+}
+.post_content .card{
+    margin: 30px 10px 0px 0px;
+}
+.post_content .grid .card-content a:first-of-type  {
+    text-decoration: none;
+    border-bottom: 0px ;
+}
+.post_content .grid .card-content h2{
+    font-size: var(--font-size-xlarge);
+}
+}
